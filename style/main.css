@@ -1,0 +1,87 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: #a8eaff;
+}
+
+.bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.bg svg {
+  position: inherit;
+  bottom: 0;
+}
+
+.header {
+  font-family: "Libre Baskerville";
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  color: #319bbb;
+  text-align: center;
+  margin: 0;
+  padding: 6px;
+  background-color: #ffffff;
+  z-index: 200;
+}
+
+.add-button {
+  font-family: "Montserrat";
+  font-size: 8rem;
+  font-weight: bold;
+  color: #0c8e48;
+  position: fixed;
+  width: 16rem;
+  height: 10rem;
+  line-height: 10rem;
+  border-radius: 500px;
+  background-color: #ffffff;
+  padding-left: 2rem;
+  top: 70vh;
+  left: 80vw;
+  box-shadow: -.5rem .5rem .5rem rgba(0, 0, 0, 0.25);
+  z-index: 200;
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal--shown {
+  display: block;
+}
+
+.modal__window {
+  position: inherit;
+  top: 50%;
+  left: 50%;
+  background-color: #ffffff;
+  height: 10rem;
+  width: 20rem;
+  margin-top: -5rem;
+  margin-left: -10rem;
+  padding: 20px;
+}
