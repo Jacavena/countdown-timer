@@ -1,38 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Countdown Timer</title>
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/animations.css">
+  <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/fontawesome.min.css">
+  <link rel="stylesheet" href="./style/solid.min.css">
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat&display=swap"
   >
-  <link rel="stylesheet" href="./style/normalize.css">
-  <link rel="stylesheet" href="./style/main.css">
 </head>
 <body>
-
-<div class="modal modal--shown">
-  <div class="modal__window">
-    <div class="window__header">
-      NEW EVENT
-    </div>
-    <form action="">
-      Event name:
-      Date:
-      Time (Optional):
-    </form>
-  </div>
-</div>
-
-<div class="bg">
-  <svg viewBox="0 0 360 542" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0C0 0 62.5 245 179 174C295.5 103 360 220 360 220V542H0V0Z" fill="#6DD5F5"/> </svg>
-</div>
 
 <header class="header">
   <h1>COUNTDOWN TIMER</h1>
 </header>
-<main class="content">
-</main>
+
+
+<div class="page">
+  <div class="modal">
+    <div class="modal__window">
+      <div class="window__header">
+        <div class="window__close" onclick="closeModal()">&times;</div>
+        <h2>NEW EVENT</h2>
+      </div>
+      <form class="modal__form" onsubmit="return addEvent(event)">
+        <div class="form__section">
+          <label for="eventname">Event Name: </label>
+          <input class="section__input" type="text" name="eventname" required>
+        </div>
+        <div class="form__section">
+          <label for="eventdate">Date: </label>
+          <input class="section__input" type="date" name="eventdate" required>
+        </div>
+        <div class="form__section">
+          <label for="eventtime">*Time: </label>
+          <input class="section__input" type="time" name="eventtime">
+        </div>
+        <div class="form__section">
+          <input class="button section__cancel" type="button" onclick="closeModal()" value="Cancel">
+          <input class="button section__add " type="submit" value="Add">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <main class="events">
+  </main>
+</div>
 
 <div class="add-button" onclick="openModal()">+</div>  
 

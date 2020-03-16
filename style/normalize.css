@@ -11,7 +11,16 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  height: 100%;
+  box-sizing: border-box;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 
 /* Sections
    ========================================================================== */
@@ -21,6 +30,7 @@ html {
  */
 
 body {
+  min-height: 100%;
   margin: 0;
 }
 
