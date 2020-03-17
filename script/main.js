@@ -39,7 +39,7 @@ function addEvent(e) {
   return false;
 }
 
-function createEvent(eventName, eventDate, eventTime) {
+function createEvent(eventName, eventDate, eventTime = "00:00") {
   const eventDiv = createDiv("div", "event");
   const eventHeader = createDiv("div", "event__header");
   const eventTarget = createDiv("div", "event__target");
