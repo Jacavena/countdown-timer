@@ -39,7 +39,8 @@ function addEvent(e) {
   return false;
 }
 
-function createEvent(eventName, eventDate, eventTime = "00:00") {
+function createEvent(eventName, eventDate, eventTime) {
+  eventTime = eventTime ? eventTime : "00:00";
   const eventDiv = createDiv("div", "event");
   const eventHeader = createDiv("div", "event__header");
   const eventTarget = createDiv("div", "event__target");
@@ -115,7 +116,7 @@ function parseTimeLeft(time) {
 
 function countdownEvents() {
   if(events.length <= 0) return false;
-  events.forEach((event) => {
+  events.forEach((event, index) => {
     const targetTime = event.querySelector(".event__target").textContent;
     const [date, time] = targetTime.split(", ");
     const timeLeft = getTimeLeft(date, time);
@@ -124,6 +125,10 @@ function countdownEvents() {
     countdown.forEach((box, index) => {
       box.textContent = parsedTimeLeft[index];
     })
+    if(Object.values(parsedTimeLeft).every((val) => val === 0)) {
+      alert("Event Reached");
+      events.splice(index, 1);
+    }
   })
 }
 
@@ -136,4 +141,4 @@ function deleteEventDiv(event) {
   }, 500);
 }
 
-setInterval(countdownEvents, 1000);
+const cdEvents = setInterval(countdownEvents, 1000);
